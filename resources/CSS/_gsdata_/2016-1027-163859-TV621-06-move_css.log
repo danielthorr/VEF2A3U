@@ -1,0 +1,29 @@
+2016-10-27 16:38:59: -- Analysis Started by User
+2016-10-27 16:38:59: L: State file does not exist: //skra/NEM-HOME$/0806933629/2016Haust/VEF2A3U/Annarverk/resources/CSS/_gsdata_/_file_state_v4._gs
+2016-10-27 16:38:59: R: State file does not exist: ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Annarverk/resources/CSS/_gsdata_/_file_state_v4._gs
+2016-10-27 16:38:59: /mainpage.css: Conflict: New files that differ
+2016-10-27 16:38:59: /mainpage.css.map: Conflict: New files that differ
+2016-10-27 16:38:59: /mainpage.scss: Conflict: New files that differ
+2016-10-27 16:38:59: /Modules/aside.scss: Conflict: New files that differ
+2016-10-27 16:38:59: /Modules/cssreset.scss: Conflict: New files that differ
+2016-10-27 16:38:59: /Modules/footer.scss: Conflict: New files that differ
+2016-10-27 16:38:59: /Modules/header.scss: Conflict: New files that differ
+2016-10-27 16:38:59: /Modules/section.scss: Conflict: New files that differ
+2016-10-27 16:38:59: /Modules/variables.scss: Conflict: New files that differ
+2016-10-27 16:38:59: Analyze has finished with Conflicts. Resolve Conflicts by selecting the correct sync direction, then click Sync
+2016-10-27 16:38:59: Changes: 9, Conflicts: 9, CopyTime: 0, CopyState: 0/1, Errors: 0, All: 11
+2016-10-27 16:38:59: -- Analysis Complete. Time 00:00:00, Speed: Many files/s
+2016-10-27 16:38:59: 
+2016-10-27 16:39:10: New _gsdata_ folder(s) created, so rescan all job folders for their ghosts
+2016-10-27 16:39:10: == Sync Started by User
+2016-10-27 16:39:10: Copy Over '//skra/NEM-HOME$/0806933629/2016Haust/VEF2A3U/Annarverk/resources/CSS/mainpage.css' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Annarverk/resources/CSS/mainpage.css' (User Action)
+2016-10-27 16:39:10: Copy Over '//skra/NEM-HOME$/0806933629/2016Haust/VEF2A3U/Annarverk/resources/CSS/mainpage.css.map' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Annarverk/resources/CSS/mainpage.css.map' (User Action)
+2016-10-27 16:39:10: Copy Over '//skra/NEM-HOME$/0806933629/2016Haust/VEF2A3U/Annarverk/resources/CSS/mainpage.scss' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Annarverk/resources/CSS/mainpage.scss' (User Action)
+2016-10-27 16:39:10: Copy Over '//skra/NEM-HOME$/0806933629/2016Haust/VEF2A3U/Annarverk/resources/CSS/Modules/aside.scss' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Annarverk/resources/CSS/Modules/aside.scss' (User Action)
+2016-10-27 16:39:10: Copy Over '//skra/NEM-HOME$/0806933629/2016Haust/VEF2A3U/Annarverk/resources/CSS/Modules/cssreset.scss' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Annarverk/resources/CSS/Modules/cssreset.scss' (User Action)
+2016-10-27 16:39:10: Copy Over '//skra/NEM-HOME$/0806933629/2016Haust/VEF2A3U/Annarverk/resources/CSS/Modules/footer.scss' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Annarverk/resources/CSS/Modules/footer.scss' (User Action)
+2016-10-27 16:39:11: Copy Over '//skra/NEM-HOME$/0806933629/2016Haust/VEF2A3U/Annarverk/resources/CSS/Modules/header.scss' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Annarverk/resources/CSS/Modules/header.scss' (User Action)
+2016-10-27 16:39:11: Copy Over '//skra/NEM-HOME$/0806933629/2016Haust/VEF2A3U/Annarverk/resources/CSS/Modules/section.scss' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Annarverk/resources/CSS/Modules/section.scss' (User Action)
+2016-10-27 16:39:11: Copy Over '//skra/NEM-HOME$/0806933629/2016Haust/VEF2A3U/Annarverk/resources/CSS/Modules/variables.scss' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Annarverk/resources/CSS/Modules/variables.scss' (User Action)
+2016-10-27 16:39:11: == Sync Complete. Time: 00:00:01, Speed: 15,6 KB/s, OK: 10, Errors: 0
+2016-10-27 16:39:11: 

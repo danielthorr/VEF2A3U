@@ -1,0 +1,94 @@
+header {
+	@include flex($direction:column, $justify:flex-end, $align-content:stretch);
+	width:100%;
+	height:60px;
+	background-color: #151F2B;
+	box-shadow: -2px 10px 5px black;
+	//background: radial-gradient(ellipse 200% 100%, #0A4081 18%, #3169AC 36%, #5383BD 48%);
+	border: 1px solid black;
+}
+
+.title {
+	width:95%;
+	box-sizing:border-box;
+	padding-left:3%;
+	padding-right:3%;
+	background-color: #565D67;
+	box-shadow: 2px 4px 8px black;
+	font-size: 4em;
+}
+
+#title {
+	@include flex($grow:2, $align-items:center);
+	padding-left:5%;
+	font-size:2.4em;
+	font-family: $font-calibri;
+}
+
+#menuBtnContainer{
+	@include flex($grow:3, $justify:space-around, $align-items:stretch, $wrap:nowrap);
+	width:90%;
+	margin: 0 auto;
+	border: 1px solid black;
+}
+
+.menuBtn{
+	Color:white;
+	@include flex($align-items:center, $justify:center);
+	width:100%;
+	border: 1px solid black;
+	border-top: none;
+	border-bottom: none;
+	text-decoration:none;
+	font-size:2.2em;
+	//Stuff sem þarf að test
+	//background: linear-gradient(#5383BD 0%, rgba(10, 64, 129, 0.2) 50%, #5383BD 100%)
+	//background: radial-gradient(ellipse 20% 20%, #0A4081 2%, #3169AC 73%, #5383BD 100%);
+	//background: radial-gradient(ellipse 200% 45%,#0A4081 2%, #3169AC 73%, #5383BD 100%);
+}
+.menuBtn:visited {
+	color:white;
+}
+
+
+
+.submenu 
+{
+	@include flex($direction:row, $wrap:nowrap);
+	width:100%;
+	
+	ul 
+	{
+	width:100%;
+		@include flex($direction: row, $wrap: nowrap);
+		
+		li:nth-child(1)
+		{
+			margin-left:auto;
+		}
+		
+		li 
+		{
+			border: 1px solid #171819;
+			font-size: 1.3em;
+			padding:4px;
+			padding-left:8px;
+			padding-right:8px;
+			background-color:#3169AC;
+			color:#C2C8D0;
+			box-shadow:1px 1px 2px black;
+		}
+		
+		a {
+			display:block;
+			width:100%;
+			height:100%;
+			text-decoration: none;
+			color:inherit;
+		}
+		
+		a:visited {
+			color:inherit;
+		}
+	}
+}
