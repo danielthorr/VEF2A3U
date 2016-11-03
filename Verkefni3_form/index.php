@@ -49,7 +49,7 @@
 				require_once $path . "Users.php";
 			?>
 			
-			<form method="post" action="php_modules/signuptest.php">
+			<form method="post" action="../resources/PHP/signuptest.php">
 				<p>
 					<label for="firstName">First Name:</label>
 					<input name="firstName" id="firstName" type="text" />

@@ -1,0 +1,29 @@
+2016-09-20 17:52:35: -- Analysis Started by User
+2016-09-20 17:52:35: L: State file does not exist: G:/Documents/TSkoli/2016Haust/VEF2A3U/Verkefni2_vefur-uppsetning/_gsdata_/_file_state_v4._gs
+2016-09-20 17:52:35: R: State file does not exist: ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Verkefni2_vefur-uppsetning/_gsdata_/_file_state_v4._gs
+2016-09-20 17:52:35: /mainpage.css: Conflict: New files that differ
+2016-09-20 17:52:35: /mainpage.css.map: Conflict: New files that differ
+2016-09-20 17:52:35: /mainpage.scss: Conflict: New files that differ
+2016-09-20 17:52:35: /Modules/aside.scss: Conflict: New files that differ
+2016-09-20 17:52:35: /Modules/cssreset.scss: Conflict: New files that differ
+2016-09-20 17:52:35: /Modules/footer.scss: Conflict: New files that differ
+2016-09-20 17:52:35: /Modules/header.scss: Conflict: New files that differ
+2016-09-20 17:52:35: /Modules/section.scss: Conflict: New files that differ
+2016-09-20 17:52:35: /Modules/variables.scss: Conflict: New files that differ
+2016-09-20 17:52:35: Analyze has finished with Conflicts. Resolve Conflicts by selecting the correct sync direction, then click Sync
+2016-09-20 17:52:35: Changes: 9, Conflicts: 9, CopyTime: 0, CopyState: 0/1, Errors: 0, All: 16
+2016-09-20 17:52:35: -- Analysis Complete. Time 00:00:00, Speed: Many files/s
+2016-09-20 17:52:35: 
+2016-09-20 17:52:42: New _gsdata_ folder(s) created, so rescan all job folders for their ghosts
+2016-09-20 17:52:42: == Sync Started by User
+2016-09-20 17:52:43: Copy Over 'G:/Documents/TSkoli/2016Haust/VEF2A3U/Verkefni2_vefur-uppsetning/mainpage.css' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Verkefni2_vefur-uppsetning/mainpage.css' (User Action)
+2016-09-20 17:52:43: Copy Over 'G:/Documents/TSkoli/2016Haust/VEF2A3U/Verkefni2_vefur-uppsetning/mainpage.css.map' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Verkefni2_vefur-uppsetning/mainpage.css.map' (User Action)
+2016-09-20 17:52:43: Copy Over 'G:/Documents/TSkoli/2016Haust/VEF2A3U/Verkefni2_vefur-uppsetning/mainpage.scss' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Verkefni2_vefur-uppsetning/mainpage.scss' (User Action)
+2016-09-20 17:52:43: Copy Over 'G:/Documents/TSkoli/2016Haust/VEF2A3U/Verkefni2_vefur-uppsetning/Modules/aside.scss' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Verkefni2_vefur-uppsetning/Modules/aside.scss' (User Action)
+2016-09-20 17:52:43: Copy Over 'G:/Documents/TSkoli/2016Haust/VEF2A3U/Verkefni2_vefur-uppsetning/Modules/cssreset.scss' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Verkefni2_vefur-uppsetning/Modules/cssreset.scss' (User Action)
+2016-09-20 17:52:43: Copy Over 'G:/Documents/TSkoli/2016Haust/VEF2A3U/Verkefni2_vefur-uppsetning/Modules/footer.scss' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Verkefni2_vefur-uppsetning/Modules/footer.scss' (User Action)
+2016-09-20 17:52:44: Copy Over 'G:/Documents/TSkoli/2016Haust/VEF2A3U/Verkefni2_vefur-uppsetning/Modules/header.scss' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Verkefni2_vefur-uppsetning/Modules/header.scss' (User Action)
+2016-09-20 17:52:44: Copy Over 'G:/Documents/TSkoli/2016Haust/VEF2A3U/Verkefni2_vefur-uppsetning/Modules/section.scss' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Verkefni2_vefur-uppsetning/Modules/section.scss' (User Action)
+2016-09-20 17:52:44: Copy Over 'G:/Documents/TSkoli/2016Haust/VEF2A3U/Verkefni2_vefur-uppsetning/Modules/variables.scss' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Verkefni2_vefur-uppsetning/Modules/variables.scss' (User Action)
+2016-09-20 17:52:44: == Sync Complete. Time: 00:00:02, Speed: 7.04 KB/s, OK: 10, Errors: 0
+2016-09-20 17:52:44: 

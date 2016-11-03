@@ -1,4 +1,7 @@
 <?php
+	SESSION_START();
+	
+	$_SESSION['currPage'] = "verkefni5/index.php";
 	
 	//Variables
 	$currentPage = basename($_SERVER['SCRIPT_FILENAME']);
@@ -47,7 +50,7 @@
 	
 		<section class="sectionCard">
 			
-			<form method="post" action="php_modules/ProcessLogin.php">
+			<form method="post" action="../resources/PHP/ProcessLogin.php">
 				<p>
 					<label for="username"></label>
 					<input name="username" id="username" type="text"  />
@@ -65,12 +68,14 @@
 				
 				$dbUser = new Users($conn);
 				
-				$user1 = $dbUser->getUser(1);
-				$user2 = $dbUser->getUser(2);
+				$users = $dbUser->userList();
 				
-				print_r($user1);
+				foreach ($users as $user)
+				{
+					print_r($user);
+					echo "<br />";
+				}
 				echo "<br />";
-				print_r($user2);
 			?>
 		</section>
 		
