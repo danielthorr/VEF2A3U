@@ -1,0 +1,24 @@
+.sectionCard {
+	width:95%;
+	box-shadow: 1px 3px 5px black;
+	height:400px;
+	//height:calc(100vh - 170px);
+	margin: 40px auto;
+	background: #0E54A7;
+}
+
+#bgSection {
+	@include flex($direction:column, $align-items: center);
+	width:90%;
+	height:100%;
+	//height:calc(100vh - 170px);
+	margin: 0 auto;
+	background: #073164;
+}
+
+section > p {
+	font-size:1.3em;
+	padding-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+}

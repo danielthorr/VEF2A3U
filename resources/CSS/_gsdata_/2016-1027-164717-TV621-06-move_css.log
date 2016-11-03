@@ -1,0 +1,9 @@
+2016-10-27 16:47:18: -- Analysis Started by On File Change Incremental
+2016-10-27 16:47:18: Changes: 3, Conflicts: 0, CopyTime: 0, CopyState: 0/0, Errors: 0, All: 12
+2016-10-27 16:47:18: Left to Right: Copy File: 3 
+2016-10-27 16:47:18: == Sync Started by On File Change Incremental
+2016-10-27 16:47:18: Copy Over '//skra/NEM-HOME$/0806933629/2016Haust/VEF2A3U/Annarverk/resources/CSS/mainpage.css' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Annarverk/resources/CSS/mainpage.css'
+2016-10-27 16:47:18: Copy Over '//skra/NEM-HOME$/0806933629/2016Haust/VEF2A3U/Annarverk/resources/CSS/mainpage.css.map' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Annarverk/resources/CSS/mainpage.css.map'
+2016-10-27 16:47:18: Copy Over '//skra/NEM-HOME$/0806933629/2016Haust/VEF2A3U/Annarverk/resources/CSS/Modules/header.scss' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Annarverk/resources/CSS/Modules/header.scss'
+2016-10-27 16:47:18: == Sync Complete. Time: 00:00:00, Speed: 0 bytes/s, OK: 3, Errors: 0
+2016-10-27 16:47:19: 

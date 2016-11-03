@@ -1,0 +1,10 @@
+2016-10-27 16:54:15: -- Analysis Started by On File Change Incremental
+2016-10-27 16:54:15: Left-Right Time Shift of 0 hours (type 1) detected for 3 files: Decided: Change Copy File operations to Copy Time
+2016-10-27 16:54:15: Changes: 0 (3), Conflicts: 0, CopyTime: 3, CopyState: 0/0, Errors: 0, All: 12
+2016-10-27 16:54:15: Left to Right: Copy Time: 3 
+2016-10-27 16:54:15: == Sync Started by On File Change Incremental
+2016-10-27 16:54:15: Copy Mod Time of //skra/NEM-HOME$/0806933629/2016Haust/VEF2A3U/Annarverk/resources/CSS/mainpage.css to ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Annarverk/resources/CSS/mainpage.css
+2016-10-27 16:54:15: Copy Mod Time of //skra/NEM-HOME$/0806933629/2016Haust/VEF2A3U/Annarverk/resources/CSS/mainpage.css.map to ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Annarverk/resources/CSS/mainpage.css.map
+2016-10-27 16:54:15: Copy Mod Time of //skra/NEM-HOME$/0806933629/2016Haust/VEF2A3U/Annarverk/resources/CSS/Modules/header.scss to ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Annarverk/resources/CSS/Modules/header.scss
+2016-10-27 16:54:15: == Sync Complete. Time: 00:00:00, Speed: 0 bytes/s, OK: 3, Errors: 0
+2016-10-27 16:54:16: 
