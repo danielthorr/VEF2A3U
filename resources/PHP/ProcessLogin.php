@@ -1,8 +1,8 @@
 <?php
 	SESSION_START();
 	
-	require_once "../../resources/connection.php";
-	require_once "../../resources/users.php";
+	require_once "connection.php";
+	require_once "users.php";
 	
 	$expected = array("name", "password");
 	$required = array("name", "password");
@@ -28,5 +28,5 @@
 	
 	$dbUser = new Users($conn);
 	
-	
+	header("Location: ../../" . $_SESSION['currPage']);
 ?>
