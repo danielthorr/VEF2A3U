@@ -1,7 +1,7 @@
 <?php
 	SESSION_START();
 	
-	$_SESSION['currPage'] = "verkefni5/index.php";
+	$_SESSION['currPage'] = "verkefni5_gagnavinnsla/index.php";
 	
 	//Variables
 	$currentPage = basename($_SERVER['SCRIPT_FILENAME']);
@@ -11,19 +11,32 @@
 	
 	require_once $path . "variables.php";
 	
+	//MySql connections
+	require_once $path . "/connection.php"; 
+	require_once $path . "/Users.php";
+	require_once $path . "MysqlCommands.php";
+	
+	//Create a class of MysqlCommands to use
+	$sendSql = new MysqlCommands($conn);
+	
+	//Checking if user is logged in
+	require_once $path . "CheckLoggedIn.php";
+	
+	//Create the current page's title
 	$title = "Title not working";
 	
-	if (strtolower($currentPage) == "index.php")
+	if (strtolower($currentPage) == "root.php")
 	{
 		$title = "Home";
 	}
 	else
 	{
-		$title = ucfirst(basename($currentPage, ".php"));
+		$titlePath = getcwd();
+		$titleName = substr($titlePath, strpos($titlePath, '_' + 1));
+		echo basename(__DIR__);
+		//$title = ucfirst(glob("../"));
 	}
 	
-	require_once $path . "/connection.php"; 
-	require_once $path . "/Users.php";
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -49,6 +62,24 @@
 		</section>
 	
 		<section class="sectionCard">
+			
+			<?php
+				if (isset($_SESSION['success']))
+				{
+					if ($_SESSION['success'])
+					{
+						?>
+						<p>Notandi fannst og réttar upplýsingar voru gefnar við innskráningu</p>
+						<?php
+					}
+					else
+					{
+						?>
+						<p>Villa kom upp við innskráningu</p>
+						<?php
+					}
+				}
+			?>
 			
 			<form method="post" action="../resources/PHP/ProcessLogin.php">
 				<p>

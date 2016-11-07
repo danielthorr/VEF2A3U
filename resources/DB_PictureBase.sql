@@ -22,6 +22,7 @@ create table Users
   userPassword varchar(15) not null,
   accessLevel tinyint default 1,									-- Hvað má notandinn sjá/gera. TD: 1 = alm notandi. 2 = súperjúser.  3 = admin
   activity bit default 1,											--  er notandinn virkur/óvirkur?
+  logInToken varchar(255) null
   constraint user_PK primary key(userID),
   constraint username_NQ unique(userName),				-- notandanafn er einkvæmt í þessum DB
   constraint useremail_NQ unique(userEmail)				-- netfang er einkvæmt líka
