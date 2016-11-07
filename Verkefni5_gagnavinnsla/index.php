@@ -64,19 +64,53 @@
 		<section class="sectionCard">
 			
 			<?php
+			//If the user has tried to log in we continue
 				if (isset($_SESSION['success']))
 				{
+					//If the user succesfully logged in we pass in a message notifying the user
 					if ($_SESSION['success'])
 					{
 						?>
 						<p>Notandi fannst og réttar upplýsingar voru gefnar við innskráningu</p>
 						<?php
 					}
+					//If the user has not succesfully logged in we need to make some extra checks
 					else
 					{
+						//If there was a missing field we notify the user and output each missing field
+						if (!empty($_SESSION['missing']))
+						{
 						?>
-						<p>Villa kom upp við innskráningu</p>
-						<?php
+							<p>Innskráning mistókst, vinsamlegast fylltu inn í eftirfarandi reiti:</p>
+							<?php
+							foreach ($_SESSION['missing'] as $item)
+							{
+								echo "<p>" . $item . "</p>";
+							}
+						}
+						//If there was no missing field there must have been incorrect information passed to the server so we notify the user
+						else
+						{
+							?>
+							<p>Innskráning mistókst, notendanafn eða lykilorð fannst ekki.</p>
+							<?php
+						}
+				
+						//We make one additional check to see if any field have been fully or partially completed
+						//Then we create a variable with the name of the field which we can compare against later down in the code
+						if (isset($_SESSION['autocomplete']) && !empty(['autocomplete']))
+						{
+							//We create an array to unset later on and push our values in there
+							$unsetVars = array();
+							foreach ($_SESSION['autocomplete'] as $key => $value)
+							{
+								foreach($value as $field => $text)
+								{
+									${$field} = $text;
+									array_push($unsetVars, ${$field});
+								}
+							}
+						}
 					}
 				}
 			?>
@@ -84,15 +118,42 @@
 			<form method="post" action="../resources/PHP/ProcessLogin.php">
 				<p>
 					<label for="username"></label>
-					<input name="username" id="username" type="text"  />
+					<!-- In our input fields, when needed, we check if the variable of the same name exists, 
+					and fill in the value with previously entered information -->
+					<input name="username" id="username" type="text" value="<?php if (isset($username)) {echo $username;}  ?>"  />
 				</p>
 				<p>
 					<label for="password"></label>
 					<input name="password" id="password" type="password"  />
 				</p>
+				<p>
+					<input name="rememberme" id="rememberme" type="checkbox" value="Yes" checked />
+					<label for="rememberme">Keep me logged in</label>
+				</p>
 				<input name="submit" type="submit" value="Log In"/>
 			
 			</form>
+			<?php
+				//We then destroy all our variables to make sure there won't be any issues
+				unset($_SESSION['autocomplete']);
+				unset($_SESSION['missing']);
+				//We loop through our dynamically created variables and unset them
+				if (isset($unsetVars))
+				{
+					foreach ($unsetVars as $field => $value)
+					{
+						unset($field);
+					}
+				}
+				//Then we unset the array holding the variables to be unset
+				unset($unsetVars);
+				
+				//Then we unset our success variable
+				if (isset($_SESSION['success']))
+				{
+					unset($_SESSION['success']);
+				}
+			?>
 			
 			
 			<?php 
