@@ -1,0 +1,62 @@
+.sectionCard {
+	width:95%;
+	box-shadow: 1px 3px 5px black;
+	height:400px;
+	//height:calc(100vh - 170px);
+	margin: 40px auto;
+	background: #0E54A7;
+}
+
+.submenu 
+{
+	@include flex($direction:row, $wrap:nowrap);
+	width:100%;
+	border: 1px solid black;
+	
+	ul 
+	{
+	width:100%;
+	border: 1px solid white;
+		@include flex($direction: row, $wrap: nowrap);
+		
+		li 
+		{
+			border: 1px solid yellow;
+			font-size: 1.6em;
+			padding:8px;
+		}
+		
+		li:nth-child(1)
+		{
+			margin-right:auto;
+		}
+		
+		a {
+			display:block;
+			width:100%;
+			height:100%;
+			text-decoration: none;
+			color:inherit;
+		}
+		
+		a:visited {
+			color:inherit;
+		}
+	}
+}
+
+#bgSection {
+	@include flex($direction:column, $align-items: center);
+	width:90%;
+	height:100%;
+	//height:calc(100vh - 170px);
+	margin: 0 auto;
+	background: #073164;
+}
+
+section > p {
+	font-size:1.3em;
+	padding-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+}

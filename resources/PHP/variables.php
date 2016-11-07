@@ -10,7 +10,7 @@
 	
 	foreach ($dirs as $dir)
 	{
-		//echo "<br />" . $dir . "<br />";
+		echo "<br />" . $dir . "<br />";
 		
 		array_push($pageNames, substr($dir, strpos($dir, '_') + 1));
 		

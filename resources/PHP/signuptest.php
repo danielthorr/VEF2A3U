@@ -1,8 +1,8 @@
 <?php
 	SESSION_START();
 	
-	require_once "../../resources/connection.php"; 
-	require_once "../../resources/Users.php";
+	require_once "connection.php"; 
+	require_once "Users.php";
 	
 	$continue = true;
 	
@@ -25,21 +25,21 @@
 
     if ($status) {
 		echo "<script type='text/javascript'>alert('Success!')</script>";
-		header("Location: ../index.php");
+		header("Location: ../../root.php");
     }else{
 		echo "<script type='text/javascript'>alert('Failed!')</script>";
-		header("Location: ../index.php");
+		header("Location: ../../root.php");
     } 
 	
 	if ($continue)
 	{
 		echo "<script type='text/javascript'>alert('Success!')</script>";
-		header("Location: index.php");
+		header("Location: ../../root.php");
 	}
 	else
 	{
 		echo "<script type='text/javascript'>alert('Failed!')</script>";
-		header("Location: index.php");
+		header("Location: ../../root.php");
 	}
 	
 ?>
