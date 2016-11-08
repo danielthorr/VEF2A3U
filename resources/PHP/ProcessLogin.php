@@ -143,11 +143,7 @@
 	}
 	
 	//Finally we redirect the user to the last page
-<<<<<<< HEAD
 	header("Location: " . $_SESSION['currPage'] . "/index.php");
-=======
-	header("Location: ../../" . $_SESSION['currPage']);
->>>>>>> origin/master
 ?>
 
 

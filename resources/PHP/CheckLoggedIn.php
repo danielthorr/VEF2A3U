@@ -1,13 +1,10 @@
 <?php
-<<<<<<< HEAD
 	//MySql connections
 	require_once $path . "/connection.php"; 
 	require_once $path . "MysqlCommands.php";
 	
 	//Create a class of MysqlCommands to use
 	$sendSql = new MysqlCommands($conn);
-=======
->>>>>>> origin/master
 
 	if (isset($_SESSION['loggedIn']))
 	{
