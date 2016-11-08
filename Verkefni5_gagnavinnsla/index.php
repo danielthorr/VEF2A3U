@@ -1,4 +1,7 @@
 <?php
+	SESSION_START();
+	
+	$_SESSION['currPage'] = dirname($_SERVER['PHP_SELF']);;
 	
 	//Variables
 	$currentPage = basename($_SERVER['SCRIPT_FILENAME']);
@@ -8,19 +11,33 @@
 	
 	require_once $path . "variables.php";
 	
+	//MySql connections
+	require_once $path . "/connection.php"; 
+	require_once $path . "/Users.php";
+	require_once $path . "MysqlCommands.php";
+	
+	//Create a class of MysqlCommands to use
+	$sendSql = new MysqlCommands($conn);
+	
+	//Checking if user is logged in
+	require_once $path . "CheckLoggedIn.php";
+	
+	//Create the current page's title
 	$title = "Title not working";
 	
-	if (strtolower($currentPage) == "index.php")
+	//We check if we're on the root page, which is our home page
+	if (strtolower($currentPage) == "root.php")
 	{
 		$title = "Home";
 	}
+	//If not we find the name of the folder we're in and take away port of it so end up with only the name of the project
 	else
 	{
-		$title = ucfirst(basename($currentPage, ".php"));
+		$titlePath = basename(dirname($_SERVER['PHP_SELF']));
+		$titleName = substr($titlePath, (strpos($titlePath, '_') + 1));
+		$title = ucfirst($titleName);
 	}
 	
-	require_once $path . "/connection.php"; 
-	require_once $path . "/Users.php";
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -47,30 +64,111 @@
 	
 		<section class="sectionCard">
 			
-			<form method="post" action="php_modules/ProcessLogin.php">
+			<?php
+			//If the user has tried to log in we continue
+				if (isset($_SESSION['success']))
+				{
+					//If the user succesfully logged in we pass in a message notifying the user
+					if ($_SESSION['success'])
+					{
+						?>
+						<p>Notandi fannst og réttar upplýsingar voru gefnar við innskráningu</p>
+						<?php
+					}
+					//If the user has not succesfully logged in we need to make some extra checks
+					else
+					{
+						//If there was a missing field we notify the user and output each missing field
+						if (!empty($_SESSION['missing']))
+						{
+						?>
+							<p>Innskráning mistókst, vinsamlegast fylltu inn í eftirfarandi reiti:</p>
+							<?php
+							foreach ($_SESSION['missing'] as $item)
+							{
+								echo "<p>" . $item . "</p>";
+							}
+						}
+						//If there was no missing field there must have been incorrect information passed to the server so we notify the user
+						else
+						{
+							?>
+							<p>Innskráning mistókst, notendanafn eða lykilorð fannst ekki.</p>
+							<?php
+						}
+				
+						//We make one additional check to see if any field have been fully or partially completed
+						//Then we create a variable with the name of the field which we can compare against later down in the code
+						if (isset($_SESSION['autocomplete']) && !empty(['autocomplete']))
+						{
+							//We create an array to unset later on and push our values in there
+							$unsetVars = array();
+							foreach ($_SESSION['autocomplete'] as $key => $value)
+							{
+								foreach($value as $field => $text)
+								{
+									${$field} = $text;
+									array_push($unsetVars, ${$field});
+								}
+							}
+						}
+					}
+				}
+			?>
+			
+			<form method="post" action="../resources/PHP/ProcessLogin.php">
 				<p>
 					<label for="username"></label>
-					<input name="username" id="username" type="text"  />
+					<!-- In our input fields, when needed, we check if the variable of the same name exists, 
+					and fill in the value with previously entered information -->
+					<input name="username" id="username" type="text" value="<?php if (isset($username)) {echo $username;}  ?>"  />
 				</p>
 				<p>
 					<label for="password"></label>
 					<input name="password" id="password" type="password"  />
 				</p>
+				<p>
+					<input name="rememberme" id="rememberme" type="checkbox" value="Yes" checked />
+					<label for="rememberme">Keep me logged in</label>
+				</p>
 				<input name="submit" type="submit" value="Log In"/>
 			
 			</form>
+			<?php
+				//We then destroy all our variables to make sure there won't be any issues
+				unset($_SESSION['autocomplete']);
+				unset($_SESSION['missing']);
+				//We loop through our dynamically created variables and unset them
+				if (isset($unsetVars))
+				{
+					foreach ($unsetVars as $field => $value)
+					{
+						unset($field);
+					}
+				}
+				//Then we unset the array holding the variables to be unset
+				unset($unsetVars);
+				
+				//Then we unset our success variable
+				if (isset($_SESSION['success']))
+				{
+					unset($_SESSION['success']);
+				}
+			?>
 			
 			
 			<?php 
 				
 				$dbUser = new Users($conn);
 				
-				$user1 = $dbUser->getUser(1);
-				$user2 = $dbUser->getUser(2);
+				$users = $dbUser->userList();
 				
-				print_r($user1);
+				foreach ($users as $user)
+				{
+					print_r($user);
+					echo "<br />";
+				}
 				echo "<br />";
-				print_r($user2);
 			?>
 		</section>
 		

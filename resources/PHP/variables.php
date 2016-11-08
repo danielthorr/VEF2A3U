@@ -9,9 +9,7 @@
 	$pageNames = array("Home");
 	
 	foreach ($dirs as $dir)
-	{
-		//echo "<br />" . $dir . "<br />";
-		
+	{		
 		array_push($pageNames, substr($dir, strpos($dir, '_') + 1));
 		
 		$tmpFile = $root . substr($dir, strpos($dir, 'Annarverk/') + 10) . "/index.php";

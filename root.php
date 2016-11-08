@@ -34,6 +34,7 @@
 
 	<?php
 		require_once $path . "header.php";
+		echo getcwd();
 	?>
 
 	<section id="bgSection" style="height:auto;">
