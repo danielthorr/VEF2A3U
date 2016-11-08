@@ -1,0 +1,15 @@
+2016-09-20 12:22:10: -- Analysis Started by User
+2016-09-20 12:22:10: L: State file does not exist: //skra/nem-home$/0806933629/2016Haust/VEF2A3U/Verkefni3_form/_gsdata_/_file_state_v4._gs
+2016-09-20 12:22:10: R: State file does not exist: ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Verkefni3_form/_gsdata_/_file_state_v4._gs
+2016-09-20 12:22:10: /mainpage.css: Conflict: New files that differ
+2016-09-20 12:22:10: /mainpage.css.map: Conflict: New files that differ
+2016-09-20 12:22:10: Analyze has finished with Conflicts. Resolve Conflicts by selecting the correct sync direction, then click Sync
+2016-09-20 12:22:10: Changes: 2, Conflicts: 2, CopyTime: 0, CopyState: 0/5, Errors: 0, All: 13
+2016-09-20 12:22:10: -- Analysis Complete. Time 00:00:00, Speed: Many files/s
+2016-09-20 12:22:10: 
+2016-09-20 12:22:13: New _gsdata_ folder(s) created, so rescan all job folders for their ghosts
+2016-09-20 12:22:13: == Sync Started by User
+2016-09-20 12:22:13: Copy Over '//skra/nem-home$/0806933629/2016Haust/VEF2A3U/Verkefni3_form/mainpage.css' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Verkefni3_form/mainpage.css' (User Action)
+2016-09-20 12:22:13: Copy Over '//skra/nem-home$/0806933629/2016Haust/VEF2A3U/Verkefni3_form/mainpage.css.map' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Verkefni3_form/mainpage.css.map' (User Action)
+2016-09-20 12:22:13: == Sync Complete. Time: 00:00:00, Speed: 0 bytes/s, OK: 7, Errors: 0
+2016-09-20 12:22:13: 

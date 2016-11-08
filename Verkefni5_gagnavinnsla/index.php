@@ -1,7 +1,11 @@
 <?php
 	SESSION_START();
 	
+<<<<<<< HEAD
 	$_SESSION['currPage'] = dirname($_SERVER['PHP_SELF']);;
+=======
+	$_SESSION['currPage'] = "verkefni5_gagnavinnsla/index.php";
+>>>>>>> origin/master
 	
 	//Variables
 	$currentPage = basename($_SERVER['SCRIPT_FILENAME']);
@@ -25,7 +29,10 @@
 	//Create the current page's title
 	$title = "Title not working";
 	
+<<<<<<< HEAD
 	//We check if we're on the root page, which is our home page
+=======
+>>>>>>> origin/master
 	if (strtolower($currentPage) == "root.php")
 	{
 		$title = "Home";
@@ -33,9 +40,16 @@
 	//If not we find the name of the folder we're in and take away port of it so end up with only the name of the project
 	else
 	{
+<<<<<<< HEAD
 		$titlePath = basename(dirname($_SERVER['PHP_SELF']));
 		$titleName = substr($titlePath, (strpos($titlePath, '_') + 1));
 		$title = ucfirst($titleName);
+=======
+		$titlePath = getcwd();
+		$titleName = substr($titlePath, strpos($titlePath, '_' + 1));
+		echo basename(__DIR__);
+		//$title = ucfirst(glob("../"));
+>>>>>>> origin/master
 	}
 	
 ?>

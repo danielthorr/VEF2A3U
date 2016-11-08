@@ -1,0 +1,10 @@
+label {
+      display:inline-block;
+      width:125px;
+      text-align:right;
+      padding-right:2px;
+}
+
+input[type="submit"] {
+       margin-left:132px;
+}

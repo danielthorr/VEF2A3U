@@ -106,7 +106,11 @@
 				}
 			?>
 			
+<<<<<<< HEAD
 			<form method="post" action="../resources/PHP/ProcessSignUp.php">
+=======
+			<form method="post" action="../resources/PHP/signuptest.php">
+>>>>>>> origin/master
 				<p>
 					<label for="firstName">First Name:</label>
 					<input name="firstName" id="firstName" type="text" value="<?php if (isset($firstName)) {echo $firstName;}  ?>" />

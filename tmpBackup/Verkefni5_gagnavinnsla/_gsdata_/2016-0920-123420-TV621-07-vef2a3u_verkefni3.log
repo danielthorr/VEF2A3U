@@ -1,0 +1,8 @@
+2016-09-20 12:34:22: -- Analysis Started by On File Change Incremental
+2016-09-20 12:34:22: Changes: 2, Conflicts: 0, CopyTime: 0, CopyState: 0/0, Errors: 0, All: 14
+2016-09-20 12:34:22: Left to Right: Copy File: 2 
+2016-09-20 12:34:22: == Sync Started by On File Change Incremental
+2016-09-20 12:34:22: Copy Over '//skra/nem-home$/0806933629/2016Haust/VEF2A3U/Verkefni3_form/mainpage.css' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Verkefni3_form/mainpage.css'
+2016-09-20 12:34:22: Copy Over '//skra/nem-home$/0806933629/2016Haust/VEF2A3U/Verkefni3_form/mainpage.css.map' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Verkefni3_form/mainpage.css.map'
+2016-09-20 12:34:23: == Sync Complete. Time: 00:00:01, Speed: 0 bytes/s, OK: 2, Errors: 0
+2016-09-20 12:34:24: 

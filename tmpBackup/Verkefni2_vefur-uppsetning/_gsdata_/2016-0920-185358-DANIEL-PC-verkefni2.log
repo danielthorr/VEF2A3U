@@ -1,0 +1,9 @@
+2016-09-20 18:53:59: -- Analysis Started by On File Change Incremental
+2016-09-20 18:53:59: Changes: 3, Conflicts: 0, CopyTime: 0, CopyState: 0/0, Errors: 0, All: 17
+2016-09-20 18:53:59: Left to Right: Copy File: 3 
+2016-09-20 18:53:59: == Sync Started by On File Change Incremental
+2016-09-20 18:54:00: Copy Over 'G:/Documents/TSkoli/2016Haust/VEF2A3U/Verkefni2_vefur-uppsetning/mainpage.css' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Verkefni2_vefur-uppsetning/mainpage.css'
+2016-09-20 18:54:00: Copy Over 'G:/Documents/TSkoli/2016Haust/VEF2A3U/Verkefni2_vefur-uppsetning/mainpage.css.map' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Verkefni2_vefur-uppsetning/mainpage.css.map'
+2016-09-20 18:54:00: Copy Over 'G:/Documents/TSkoli/2016Haust/VEF2A3U/Verkefni2_vefur-uppsetning/Modules/section.scss' -> 'ftp://tsuts.tskoli.is/2016Haust/VEF2A3U/Verkefni2_vefur-uppsetning/Modules/section.scss'
+2016-09-20 18:54:00: == Sync Complete. Time: 00:00:01, Speed: 8.69 KB/s, OK: 3, Errors: 0
+2016-09-20 18:54:01: 

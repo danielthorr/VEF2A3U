@@ -1,0 +1,12 @@
+footer {
+	@include flex ($align-items:center, $justify: space-between);
+	padding-left:5%;
+	padding-right:5%;
+	height:50px;
+	color: lightgray;
+	background-color:$color-footer;
+}
+
+footer p {
+	font-size:1.3em;
+}

@@ -1,0 +1,21 @@
+@import "modules/cssreset";
+
+
+@import "modules/variables";
+
+@import "modules/header";
+@import "modules/section";
+@import "modules/footer";
+
+//THIS PALETTE IS USED FOR THE GRAYS http://paletton.com/#uid=13C0u0k3n4P4Yvb5QjJhC8hrK9j
+//THIS ONE FOR THE BLUES http://paletton.com/#uid=53C0u0kw0w0jyC+oRxVy4oIDfjr
+
+body {
+	@include flex($direction:column);
+	background: #212121;
+	overflow-x: hidden;
+	background: -webkit-radial-gradient(ellipse 57% 1000%, #212121 70%, #616161 84%, #607D8B 100%);
+	background: -o-radial-gradient(ellipse 57% 1000%, #212121 70%, #616161 84%, #607D8B 100%);
+	background: -moz-radial-gradient(ellipse 57% 1000%, #212121 70%, #616161 84%, #607D8B 100%);
+	background: radial-gradient(ellipse 57% 1000%, #212121 70%, #616161 84%, #607D8B 100%);
+}
