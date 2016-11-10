@@ -74,5 +74,5 @@
 	}
 	
 	//Finally we redirect the user to the last page
-	header("Location: " . $_SESSION['currPage'] . "/index.php");
+	header("Location: " . $_SESSION['currPage']);
 ?>

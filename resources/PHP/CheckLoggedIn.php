@@ -6,7 +6,7 @@
 	//Create a class of MysqlCommands to use
 	$sendSql = new MysqlCommands($conn);
 
-	if (isset($_SESSION['loggedIn']))
+	if (!isset($_SESSION['loggedIn']))
 	{
 		$cookie = isset($_COOKIE['rememberme']) ? $_COOKIE['rememberme'] : '';
 		if ($cookie)

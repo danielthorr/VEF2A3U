@@ -1,6 +1,8 @@
 <?php
 	SESSION_START();
 	
+	$_SESSION['tmpMessage'] = "";
+	
 	//MySql connections and methods
 	require_once "connection.php";
 	require_once "users.php";
@@ -68,6 +70,7 @@
 	//If everything worked out we destroy our autocomplete, missing and login arrays
 	else
 	{
+		$_SESSION['tmpMessage'] = "Congratulations! You have been signed in!";
 		unset($_SESSION['autocomplete']);
 		unset($_SESSION['missing']);
 		unset($login);
@@ -143,7 +146,7 @@
 	}
 	
 	//Finally we redirect the user to the last page
-	header("Location: " . $_SESSION['currPage'] . "/index.php");
+	header("Location: " . $_SESSION['currPage']);
 ?>
 
 
