@@ -120,6 +120,17 @@
 				}
 			?>
 			
+			<?php
+			
+			if (isset($_SESSION['loggedIn']) && !empty($_SESSION['loggedIn']))
+			{
+				?>
+				<p style="padding-bottom:15px;">You must sign out before you can sign up a new account.</p>
+			<?php
+			}
+			else
+			{
+				?>
 			<form style="padding:20px;" method="post" action="../resources/PHP/ProcessSignUp.php">
 				<p>
 					<label for="firstName">First Name:</label>
@@ -146,6 +157,9 @@
 				</p>
 			</form>
 		</section>
+			<?php
+			}
+			?>
 		
 		<?php
 			//We then destroy all our variables to make sure there won't be any issues
