@@ -1,6 +1,9 @@
 <?php
 	use File\Upload;
 	
+	SESSION_START();
+	
+	$_SESSION['currPage'] = dirname($_SERVER['PHP_SELF'] . "/index.php");
 	
 	//Variables
 	$currentPage = basename($_SERVER['SCRIPT_FILENAME']);
@@ -9,6 +12,17 @@
 	$path = $resources . "PHP/";
 	
 	require_once $path . "variables.php";
+	
+	//MySql connections
+	require_once $path . "connection.php"; 
+	require_once $path . "Users.php";
+	require_once $path . "MysqlCommands.php";
+	
+	//Create a class of MysqlCommands to use
+	$sendSql = new MysqlCommands($conn);
+	
+	//Checking if user is logged in
+	require_once $path . "CheckLoggedIn.php";
 
 	if (isset($_POST['upload'])) 
 	{
@@ -36,13 +50,17 @@
 	
 	$title = "Title not working";
 	
-	if (strtolower($currentPage) == "index.php")
+	//We check if we're on the root page, which is our home page
+	if (strtolower($currentPage) == "root.php")
 	{
 		$title = "Home";
 	}
+	//If not we find the name of the folder we're in and take away port of it so end up with only the name of the project
 	else
 	{
-		$title = ucfirst(basename($currentPage, ".php"));
+		$titlePath = basename(dirname($_SERVER['PHP_SELF']));
+		$titleName = substr($titlePath, (strpos($titlePath, '_') + 1));
+		$title = ucfirst($titleName);
 	}
 	
 ?>
@@ -61,13 +79,21 @@
 	?>
 
 	<section id="bgSection" style="height:auto;">
-		<section class="submenu" style="height:auto;">
-			<ul>
-				<li><a style="height:auto;" href="#">Home</a></li>
-				<li><a style="height:auto;" href="#">Log In</a></li>
-				<li><a style="height:auto;" href="#">Sign Up</a></li>
-			</ul>
-		</section>
+		
+		<?php
+			require_once $path . "SubHeader.php";
+		?>
+	
+		<h2 class="title" style="font-size:1.5em;">
+		<?php
+			if (isset($_SESSION['tmpMessage']) && !empty($_SESSION['tmpMessage']))
+			{
+				echo $_SESSION['tmpMessage'];
+				$_SESSION['tmpMessage'] = null;
+				unset($_SESSION['tmpMessage']);
+			}
+		?>
+		</h2>
 	
 		<section class="sectionCard">
 			<?php 				

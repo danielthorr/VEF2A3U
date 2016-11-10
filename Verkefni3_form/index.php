@@ -1,7 +1,7 @@
 <?php
 	SESSION_START();
 	
-	$_SESSION['currPage'] = dirname($_SERVER['PHP_SELF']);;
+	$_SESSION['currPage'] = dirname($_SERVER['PHP_SELF'] . "/index.php");
 	
 	//Variables
 	$currentPage = basename($_SERVER['SCRIPT_FILENAME']);
@@ -11,11 +11,16 @@
 	
 	require_once $path . "variables.php";
 	
+	//MySql connections
+	require_once $path . "connection.php"; 
+	require_once $path . "Users.php";
+	require_once $path . "MysqlCommands.php";
+	
+	//Create a class of MysqlCommands to use
+	$sendSql = new MysqlCommands($conn);
+	
 	//Checking if user is logged in
 	require_once $path . "CheckLoggedIn.php";
-	
-	//Create the current page's title
-	$title = "Title not working";
 	
 	//We check if we're on the root page, which is our home page
 	if (strtolower($currentPage) == "root.php")
@@ -45,13 +50,22 @@
 		require_once $path . "header.php";
 	?>
 
-	<section id="bgSection">
-		<section class="submenu">
-			<ul>
-				<li><a href="#">Log In</a></li>
-				<li><a href="#">Sign Up</a></li>
-			</ul>
-		</section>
+	<section id="bgSection" style="height:auto;">
+		
+		<?php
+			require_once $path . "SubHeader.php";
+		?>
+	
+		<h2 class="title" style="font-size:1.5em;">
+		<?php
+			if (isset($_SESSION['tmpMessage']) && !empty($_SESSION['tmpMessage']))
+			{
+				echo $_SESSION['tmpMessage'];
+				$_SESSION['tmpMessage'] = null;
+				unset($_SESSION['tmpMessage']);
+			}
+		?>
+		</h2>
 	
 		<section class="sectionCard">
 			<?php 				
@@ -62,7 +76,7 @@
 					if ($_SESSION['success'])
 					{
 						?>
-						<p>Notandi fannst og réttar upplýsingar voru gefnar við innskráningu</p>
+						<p>Notandi hefur verið skráður.</p>
 						<?php
 					}
 					//If the user has not succesfully logged in we need to make some extra checks
@@ -72,7 +86,7 @@
 						if (!empty($_SESSION['missing']))
 						{
 						?>
-							<p>Innskráning mistókst, vinsamlegast fylltu inn í eftirfarandi reiti:</p>
+							<p>Skráning mistókst, vinsamlegast fylltu inn í eftirfarandi reiti:</p>
 							<?php
 							foreach ($_SESSION['missing'] as $item)
 							{
@@ -83,7 +97,7 @@
 						else
 						{
 							?>
-							<p>Innskráning mistókst, notendanafn eða lykilorð fannst ekki.</p>
+							<p>Skráning mistókst, einhverjir reitir eru ófullnægjandi.</p>
 							<?php
 						}
 				
@@ -106,7 +120,7 @@
 				}
 			?>
 			
-			<form method="post" action="../resources/PHP/ProcessSignUp.php">
+			<form style="padding:20px;" method="post" action="../resources/PHP/ProcessSignUp.php">
 				<p>
 					<label for="firstName">First Name:</label>
 					<input name="firstName" id="firstName" type="text" value="<?php if (isset($firstName)) {echo $firstName;}  ?>" />
@@ -121,7 +135,7 @@
 				</p>
 				<p>
 					<label for="email">Email:</label>
-					<input name="email" id="email" type="text" value="<?php if (isset($email)) {echo $email;}  ?>" />
+					<input name="email" id="email" type="email" value="<?php if (isset($email)) {echo $email;}  ?>" />
 				</p>
 				<p>
 					<label for="password">Password:</label>

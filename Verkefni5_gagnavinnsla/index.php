@@ -1,7 +1,7 @@
 <?php
 	SESSION_START();
 	
-	$_SESSION['currPage'] = dirname($_SERVER['PHP_SELF']);;
+	$_SESSION['currPage'] = dirname($_SERVER['PHP_SELF'] . "/index.php");
 	
 	//Variables
 	$currentPage = basename($_SERVER['SCRIPT_FILENAME']);
@@ -12,8 +12,8 @@
 	require_once $path . "variables.php";
 	
 	//MySql connections
-	require_once $path . "/connection.php"; 
-	require_once $path . "/Users.php";
+	require_once $path . "connection.php"; 
+	require_once $path . "Users.php";
 	require_once $path . "MysqlCommands.php";
 	
 	//Create a class of MysqlCommands to use
@@ -52,15 +52,25 @@
 	<?php
 		require_once $path . "header.php";
 	?>
+		
+	
 
-	<section id="bgSection">
-		<section class="submenu">
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Log In</a></li>
-				<li><a href="#">Sign Up</a></li>
-			</ul>
-		</section>
+	<section id="bgSection" style="height:auto;">
+		
+		<?php
+			require_once $path . "SubHeader.php";
+		?>
+	
+		<h2 class="title" style="font-size:1.5em;">
+		<?php
+			if (isset($_SESSION['tmpMessage']) && !empty($_SESSION['tmpMessage']))
+			{
+				echo $_SESSION['tmpMessage'];
+				$_SESSION['tmpMessage'] = null;
+				unset($_SESSION['tmpMessage']);
+			}
+		?>
+		</h2>
 	
 		<section class="sectionCard">
 			
@@ -116,24 +126,39 @@
 				}
 			?>
 			
-			<form method="post" action="../resources/PHP/ProcessLogin.php">
-				<p>
-					<label for="username"></label>
-					<!-- In our input fields, when needed, we check if the variable of the same name exists, 
-					and fill in the value with previously entered information -->
-					<input name="username" id="username" type="text" value="<?php if (isset($username)) {echo $username;}  ?>"  />
-				</p>
-				<p>
-					<label for="password"></label>
-					<input name="password" id="password" type="password"  />
-				</p>
-				<p>
-					<input name="rememberme" id="rememberme" type="checkbox" value="Yes" checked />
-					<label for="rememberme">Keep me logged in</label>
-				</p>
-				<input name="submit" type="submit" value="Log In"/>
+			<?php
 			
-			</form>
+			if (isset($_SESSION['loggedIn']) && !empty($_SESSION['loggedIn']))
+			{
+				?>
+				<p style="padding-bottom:15px;">You are already logged in.</p>
+			<?php
+			}
+			else
+			{
+				?>
+				<form style="padding:20px;" method="post" action="../resources/PHP/ProcessLogin.php">
+					<p>
+						<label for="username"></label>
+						<!-- In our input fields, when needed, we check if the variable of the same name exists, 
+						and fill in the value with previously entered information -->
+						<input name="username" id="username" type="text" value="<?php if (isset($username)) {echo $username;}  ?>"  />
+					</p>
+					<p>
+						<label for="password"></label>
+						<input name="password" id="password" type="password"  />
+					</p>
+					<p>
+						<input name="rememberme" id="rememberme" type="checkbox" value="Yes" checked />
+						<label for="rememberme">Keep me logged in</label>
+					</p>
+					<input name="submit" type="submit" value="Log In"/>
+				
+				</form>
+			<?php
+			}
+			?>
+			
 			<?php
 				//We then destroy all our variables to make sure there won't be any issues
 				unset($_SESSION['autocomplete']);
@@ -171,10 +196,6 @@
 				echo "<br />";
 			?>
 		</section>
-		
-		<div>
-			
-		</div>
 		
 	</section>
 
