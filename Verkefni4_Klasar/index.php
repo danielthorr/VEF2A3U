@@ -1,5 +1,4 @@
 <?php
-	use File\Upload;
 	
 	SESSION_START();
 	
@@ -26,11 +25,16 @@
 
 	if (isset($_POST['upload'])) 
 	{
-    	echo "<pre>";
+    	/*echo "<pre>";
 		print_r($_FILES);  # Skoðum skráarupplýsingar
 		echo "</pre>";
+		*/
 		// define the path to the upload folder
-		$destination = $_SERVER['DOCUMENT_ROOT'] . "/2t/0806933629/2016Haust/VEF2A3U/Annarverk/resources/images/";  # Þú þarft að breyta slóð. 
+		$destination = $_SERVER['DOCUMENT_ROOT'] . "/2t/0806933629/2016Haust/VEF2A3U/Annarverk/resources/images/" . $_SESSION['username'] . "/";
+		//If the users' image folder doesn't exist we create it here
+		if (!file_exists($destination))	{
+			mkdir($destination, 0777, true);
+		}
 		// svo við getum notað class með t.d. move() fallið og getMessage() ogsfrv...
 		require_once $path . 'UploadImg.php';
 		// Because the object might throw an exception
@@ -38,7 +42,7 @@
 			// búum til upload object til notkunar.  Sendum argument eða slóðina að upload möppunni sem á að geyma skrá
 			$loader = new Upload($destination);
 			// köllum á og notum move() fallið sem færir skrá í upload möppu, þurfum að gera þetta strax.
-			$loader->upload();
+			$loader->upload($_POST['imgName'], $_POST['imgDescription'], $_SESSION['username']);
 			// köllum á getMessage til að fá skilaboð (error or not).
 			$result = $loader->getMessages();
 
@@ -96,7 +100,7 @@
 		</h2>
 	
 		<section class="sectionCard">
-			<?php 				
+			<?php
 				//Require bókaklasa
 				require_once $path . "klasi_bok.php";
 				
@@ -128,17 +132,37 @@
 					echo '</ul>';
 				}
 			?>
-			
-			<form action="" method="post" enctype="multipart/form-data" id="uploadImage">
-				<p>
-					<label for="image">Upload image:</label>
-					<input type="file" name="image" id="image">
-				</p>
-				<p>
-					<input type="submit" name="upload" id="upload" value="Upload">
-				</p>
-			</form>
-			
+			<?php 
+				if (isset($_SESSION['loggedIn']) && !empty($_SESSION['loggedIn']))
+				{
+					?>
+					<form name="uploadImageForm" action="" method="post" enctype="multipart/form-data" id="uploadImage">
+						<p>
+							<label for="image">Upload image:</label>
+							<input type="file" name="image" id="image">
+						</p>
+						<p>
+							<label for="imgName">Name:</label>
+							<input type="text" name="imgName" id="imgName">
+						</p>
+						<p>
+							<label for="imgDescription">Description:</label>
+							<input type="text" name="imgDescription" id="imgDescription">
+							</textarea>
+						</p>
+						<p>
+							<input type="submit" name="upload" id="upload" value="Upload">
+						</p>
+					</form>
+				<?php
+				}
+				else
+				{
+					?>
+					<p>You must be signed in to upload an image</p>
+				<?php
+				}
+				?>
 		</section>
 		
 		<section class="sectionCard" style="height:auto; padding:20px 0px;">

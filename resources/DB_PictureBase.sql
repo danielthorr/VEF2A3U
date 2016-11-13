@@ -9,6 +9,8 @@ create table images
   imagePath varchar(255) not null,
   imageText varchar(155) default null,
   categoryID int(11) default null,
+  uploadDate datetime NOT NULL DEFAULT NOW(),
+  ownerID int(11) default null,
   constraint image_PH primary key(imageID)
 );
 
